@@ -10,12 +10,98 @@ int mainWinsNoPlayoffs = 9;
 int advancedWinsPlayoffs = 11;
 int advancedWinsNoPlayoffs = 9;
 
+int minWins = 0;
+int maxWins = 16;
+
 int numOpenTeamsPlayoffs = 256;
 int numImTeamsPlayoffs = 64;
 int numMainTeamsPlayoffs, numAdvancedTeamsPlayoffs = 32;
 
 int imMoveups = 2;
-int mainMoveupsFromOpen = ;
+int mainMoveupsFromOpen = 5;
+
+
+void playoffsOrNot (int wins, string division) {
+
+    string made = "Made playoffs.";
+    string notMade = "Did not make playoffs.";
+    string depends = "Depends on how many rounds lost.";
+
+    if (division == "open") {
+        if (wins > 16 || wins < 0) {
+            cout << "Impossible amount of wins.\n";
+        }
+        else if (wins >= openWinsPlayoffs) {
+            cout << made << '\n';
+        }
+        else if (wins <= openWinsPlayoffs) {
+            cout << notMade << '\n';
+        }
+        else {
+            cout << depends << '\n';
+        }
+    }
+
+    else if (division == "intermediate") {
+        if (wins > 16 || wins < 0) {
+            cout << "Impossible amount of wins.\n";
+        }
+        else if (wins >= imWinsPlayoffs) {
+            cout << made << '\n';
+        }
+        else if (wins <= imWinsNoPlayoffs) {
+            cout << notMade << '\n';
+        }
+        else {
+            cout << depends << '\n';
+        }
+    }
+
+    else if (division == "main") {
+        if (wins > 16 || wins < 0) {
+            cout << "Impossible amount of wins.\n";
+        }
+        else if (wins >= mainWinsPlayoffs) {
+            cout << made << '\n';
+        }
+        else if (wins <= mainWinsNoPlayoffs) {
+            cout << notMade << '\n';
+        }
+        else {
+            cout << depends << '\n';
+        }
+    }
+    else if (division == "advanced") {
+        if (wins > 16 || wins < 0) {
+            cout << "Impossible amount of wins.\n";
+        }
+        else if (wins >= advancedWinsPlayoffs) {
+            cout << made << '\n';
+        }
+        else if (wins <= advancedWinsNoPlayoffs) {
+            cout << notMade << '\n';
+        }
+        else {
+            cout << depends << '\n';
+        }
+    }
+    else {
+        cout << "Error: invalid division." << '\n';
+    }
+    return;
+}
+
+
+
+void winsForMoveups(string currDivision, string nextDivision) {
+    if (currDivision == "open") {
+        if (nextDivision == "intermediate") {
+            
+        }
+    }
+
+    return;
+}
 
 void introduction() {
     int input;
@@ -45,77 +131,7 @@ void introduction() {
         }
         //inputs 2, 3, etc...
     }
-    cout << "Goodbye!\n";
-    return;
-}
-
-void playoffsOrNot (int wins, string division) {
-
-    string made = "Made playoffs.";
-    string notMade = "Did not make playoffs.";
-    string depends = "Depends on how many rounds lost.";
-
-    if (division == "open") {
-        if (wins >= openWinsPlayoffs) {
-            cout << made << '\n';
-        }
-        else if (wins <= openWinsPlayoffs) {
-            cout << notMade << '\n';
-        }
-        else {
-            cout << depends << '\n';
-        }
-    }
-
-    else if (division == "intermediate") {
-        if (wins >= imWinsPlayoffs) {
-            cout << made << '\n';
-        }
-        else if (wins <= imWinsNoPlayoffs) {
-            cout << notMade << '\n';
-        }
-        else {
-            cout << depends << '\n';
-        }
-    }
-
-    else if (division == "main") {
-        if (wins >= mainWinsPlayoffs) {
-            cout << made << '\n';
-        }
-        else if (wins <= mainWinsNoPlayoffs) {
-            cout << notMade << '\n';
-        }
-        else {
-            cout << depends << '\n';
-        }
-    }
-    else if (division == "advanced") {
-        if (wins >= advancedWinsPlayoffs) {
-            cout << made << '\n';
-        }
-        else if (wins <= advancedWinsNoPlayoffs) {
-            cout << notMade << '\n';
-        }
-        else {
-            cout << depends << '\n';
-        }
-    }
-    else {
-        cout << "Error: invalid division." << '\n';
-    }
-    return;
-}
-
-
-
-void winsForMoveups(string currDivision, string nextDivision) {
-    if (currDivision == "open") {
-        if (nextDivision == "intermediate") {
-            
-        }
-    }
-
+    cout << "Goodbye!";
     return;
 }
 
