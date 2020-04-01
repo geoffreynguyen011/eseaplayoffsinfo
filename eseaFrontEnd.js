@@ -1,8 +1,8 @@
 function playoffsDetermination() {
     let openPOwins = 9;
     let imPOwins = 10;
-    let mainPOwins = 9;
-    let advPOwins = 8;
+    let mainPOwins = 10;
+    let advPOwins = 9;
     let value = document.getElementById('numWins').value;
     let division = document.getElementById('division').value.toLowerCase();
 
@@ -11,41 +11,50 @@ function playoffsDetermination() {
     }
     else {
         if (division === 'open') {
-            if (value < openPOwins) {
-                document.getElementById('wins').innerHTML = 'Did not make playoffs.';
+            if (value > openPOwins) {
+                document.getElementById('wins').innerHTML = 'Made playoffs!';
+            }
+            else if (value == openPOwins) {
+                document.getElementById('wins').innerHTML = 'Probably made playoffs.';
+            }
+            else if (value == openPOwins - 1) {
+                document.getElementById('wins').innerHTML = 'Probably did not make playoffs.';
             }
             else {
-                document.getElementById('wins').innerHTML = 'Made playoffs!';
+                document.getElementById('wins').innerHTML = 'Did not make playoffs.';
             }
         }
         else if (division === 'intermediate' || division === 'im') {
-            if (value < imPOwins) {
-                document.getElementById('wins').innerHTML = 'Did not make playoffs.';
+            if (value > imPOwins) {
+                document.getElementById('wins').innerHTML = 'Made playoffs!';
             }
-            else if (value === imPOwins) {
+            else if (value == imPOwins) {
                 document.getElementById('wins').innerHTML = 'Probably made playoffs.';
             }
             else {
-                document.getElementById('wins').innerHTML = 'Made playoffs!';
+                document.getElementById('wins').innerHTML = 'Did not make playoffs.';
             }
         }
         else if (division === 'main') {
-            if (value < mainPOwins) {
-                document.getElementById('wins').innerHTML = 'Did not make playoffs.';
+            if (value > mainPOwins) {
+                document.getElementById('wins').innerHTML = 'Made playoffs!';
             }
-            else if (value === mainPOwins) {
-                document.getElementById('wins').innerHTML = 'Probably made playoffs'
+            else if (value == mainPOwins) {
+                document.getElementById('wins').innerHTML = 'Probably made playoffs.'
             }
             else {
-                document.getElementById('wins').innerHTML = 'Made playoffs!';
+                document.getElementById('wins').innerHTML = 'Did not make playoffs.';
             }
         }
         else if (division === 'advanced') {
-            if (value < advPOwins) {
-                document.getElementById('wins').innerHTML = 'Did not make playoffs.';
+            if (value > advPOwins) {
+                document.getElementById('wins').innerHTML = 'Made playoffs!';
+            }
+            else if (value == advPOwins - 1) {
+                document.getElementById('wins').innerHTML = 'Very unlikely to make playoffs.';
             }
             else {
-                document.getElementById('wins').innerHTML = 'Made playoffs!';
+                document.getElementById('wins').innerHTML = 'Did not make playoffs.';
             }
         }
         else {
@@ -59,7 +68,7 @@ function winsForNextDivision() {
     let openToMain = 4;
     let openToAdv = 8;
     let imToMain = 1;
-    let imToAdv = 5;
+    let imToAdv = 6;
     let mainToAdv = 3;
     let advToMDL = 4;
     let currDiv = document.getElementById('currDiv').value.toLowerCase();
@@ -81,7 +90,7 @@ function winsForNextDivision() {
     }
     else if (currDiv === 'intermediate') {
         if (nextDiv === 'main') {
-            document.getElementById('winsForDivision').innerHTML = `You need ${imToMain} wins to make main from intermediate.`
+            document.getElementById('winsForDivision').innerHTML = `You need ${imToMain} win(s) to make main from intermediate.`
         }
         else if (nextDiv === 'advanced') {
             document.getElementById('winsForDivision').innerHTML = `You need ${imToAdv} wins to make advanced from intermediate.`
