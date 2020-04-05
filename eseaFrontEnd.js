@@ -50,6 +50,9 @@ function playoffsDetermination() {
             if (value > advPOwins) {
                 document.getElementById('wins').innerHTML = 'Made playoffs!';
             }
+            else if (value == advPOwins) {
+                document.getElementById('wins').innerHTML = 'Likely to make playoffs.';
+            }
             else if (value == advPOwins - 1) {
                 document.getElementById('wins').innerHTML = 'Very unlikely to make playoffs.';
             }
