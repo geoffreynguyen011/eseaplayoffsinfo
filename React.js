@@ -7,10 +7,13 @@ class ESEA extends React.Component {
         super()
         this.state = {
             numWins: '',
-            division: ''
+            division: '',
+            madeOrNot: '',
+            displayText: ''
         }
         
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
     
     handleChange(event) {
@@ -20,10 +23,125 @@ class ESEA extends React.Component {
         })
     }
     
+    handleSubmit(event) {
+        event.preventDefault()
+        if (this.state.division === 'open') {
+            if (this.state.numWins === '' ||
+            this.state.numWins === '0' ||
+            this.state.numWins === '1' ||
+            this.state.numWins === '2' ||
+            this.state.numWins === '3' ||
+            this.state.numWins === '4' ||
+            this.state.numWins === '5' ||
+            this.state.numWins === '6' ||
+            this.state.numWins === '7' ||
+            this.state.numWins === '8') {
+                this.setState({ 
+                    displayText: 'Did not make playoffs'
+                })
+            }
+            else if (this.state.numWins === '9' ||
+            this.state.numWins === '10') {
+                this.setState({ 
+                    displayText: 'Good chance of making playoffs'
+                })
+            }
+            else {
+                this.setState({ 
+                    displayText: 'Made playoffs!'
+                })
+            }
+        }
+        else if (this.state.division === 'intermediate') {
+            if (this.state.numWins === '' || 
+            this.state.numWins === '0' ||
+            this.state.numWins === '1' ||
+            this.state.numWins === '2' ||
+            this.state.numWins === '3' ||
+            this.state.numWins === '4' ||
+            this.state.numWins === '5' ||
+            this.state.numWins === '6' ||
+            this.state.numWins === '7' ||
+            this.state.numWins === '8' || 
+            this.state.numWins === '9') {
+                this.setState({ 
+                    displayText: 'Did not make playoffs'
+                })
+            }
+            else if (this.state.numWins === '10') {
+                this.setState({ 
+                    displayText: 'Good chance of making playoffs'
+                })
+            }
+            else {
+                this.setState({ 
+                    displayText: 'Made playoffs!'
+                })
+            }
+        }
+        else if (this.state.division === 'main') {
+            if (this.state.numWins === '' || 
+            this.state.numWins === '0' ||
+            this.state.numWins === '1' ||
+            this.state.numWins === '2' ||
+            this.state.numWins === '3' ||
+            this.state.numWins === '4' ||
+            this.state.numWins === '5' ||
+            this.state.numWins === '6' ||
+            this.state.numWins === '7' ||
+            this.state.numWins === '8' || 
+            this.state.numWins === '9') {
+                this.setState({ 
+                    displayText: 'Did not make playoffs'
+                })
+            }
+            else if (this.state.numWins === '10') {
+                this.setState({ 
+                    displayText: 'Good chance of making playoffs'
+                })
+            }
+            else {
+                this.setState({ 
+                    displayText: 'Made playoffs!'
+                })
+            }
+        }
+        else if (this.state.division === 'advanced') {
+            if (this.state.numWins === '' || 
+            this.state.numWins === '0' ||
+            this.state.numWins === '1' ||
+            this.state.numWins === '2' ||
+            this.state.numWins === '3' ||
+            this.state.numWins === '4' ||
+            this.state.numWins === '5' ||
+            this.state.numWins === '6' ||
+            this.state.numWins === '7' ||
+            this.state.numWins === '8') {
+                this.setState({ 
+                    displayText: 'Did not make playoffs'
+                })
+            }
+            else if (this.state.numWins === '9' || 
+            this.state.numWins === '10' ) {
+                this.setState({ 
+                    displayText: 'Good chance of making playoffs'
+                })
+            }
+            else {
+                this.setState({ 
+                    displayText: 'Made playoffs!'
+                })
+            }
+        }
+    }
+    
+    
   render() {
     return (
       <main>
-        <form>
+      <Intro />
+      <br />
+        <form className='info-form' onSubmit={this.handleSubmit}>
             <label>
                 <select
                     type='text'
@@ -31,6 +149,7 @@ class ESEA extends React.Component {
                     value={this.state.numWins}
                     onChange={this.handleChange}
                 >
+                    <option value=''>Select wins</option>
                     <option value='0'>0</option>
                     <option value='1'>1</option>
                     <option value='2'>2</option>
@@ -58,6 +177,7 @@ class ESEA extends React.Component {
                     onChange={this.handleChange}
                     name='division'
                 >
+                    <option value=''>Select division</option>
                     <option value='open'>Open</option>
                     <option value='intermediate'>Intermediate</option>
                     <option value='main'>Main</option>
@@ -65,8 +185,13 @@ class ESEA extends React.Component {
                     <option value='mdl'>MDL</option>
                 </select>
                 <br />
+                <button>Submit</button>
+                <div>
+                    <h3>{this.state.displayText}</h3>
+                </div>
             </label>
         </form>
+        
       </main>
     );
   }
