@@ -3,7 +3,6 @@ Information regarding the ESEA playoffs brackets for Open, Intermediate, Main, a
 
 This is meant to be a side project and not to be used for monetary gain through any means.
 
-How to run it:
-1. Download the HTML and JavaScript file.
-2. Open the HTML file through a browser.
-3. Once it opens up on your browser, input your values based on what you're looking for. Valid number for wins are 0 to 16, and valid leagues are: open, intermediate, main, advanced, and MDL.
+As of April: Project has been implemented using React instead of regular JavaScript. Currently, it runs on scrimba; adjustments may need to be made if not implemented through scrimba.
+
+Last updated: April 22, 2020
