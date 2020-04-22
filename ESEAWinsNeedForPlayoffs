@@ -1,7 +1,6 @@
 import React from 'react'
-import Intro from './Intro'
 
-class ESEA extends React.Component {
+class ESEAWinsNeedForPlayoffs extends React.Component {
     
     constructor() {
         super()
@@ -139,10 +138,24 @@ class ESEA extends React.Component {
   render() {
     return (
       <main>
-      <Intro />
+      <br />
+      <div>Choose your current division and how many wins you have:</div>
       <br />
         <form className='info-form' onSubmit={this.handleSubmit}>
             <label>
+                <select 
+                    type='text'
+                    value={this.state.division}
+                    onChange={this.handleChange}
+                    name='division'
+                >
+                    <option value=''>Select division</option>
+                    <option value='open'>Open</option>
+                    <option value='intermediate'>Intermediate</option>
+                    <option value='main'>Main</option>
+                    <option value='advanced'>Advanced</option>
+                </select>
+                <br />
                 <select
                     type='text'
                     name='numWins'
@@ -170,21 +183,6 @@ class ESEA extends React.Component {
                 </select>
                 
                 <br />
-                
-                <select 
-                    type='text'
-                    value={this.state.division}
-                    onChange={this.handleChange}
-                    name='division'
-                >
-                    <option value=''>Select division</option>
-                    <option value='open'>Open</option>
-                    <option value='intermediate'>Intermediate</option>
-                    <option value='main'>Main</option>
-                    <option value='advanced'>Advanced</option>
-                    <option value='mdl'>MDL</option>
-                </select>
-                <br />
                 <button>Submit</button>
                 <div>
                     <h3>{this.state.displayText}</h3>
@@ -197,4 +195,4 @@ class ESEA extends React.Component {
   }
 }
 
-export default ESEA
+export default ESEAWinsNeedForPlayoffs
