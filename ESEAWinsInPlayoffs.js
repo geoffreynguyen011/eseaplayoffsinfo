@@ -72,6 +72,8 @@ class ESEAWinsInPlayoffs extends React.Component {
     render() {
         return (
             <main>
+            <div>Choose what division you are in and what division you want to make:</div>
+            <br />
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         <select 
@@ -104,7 +106,7 @@ class ESEAWinsInPlayoffs extends React.Component {
                     </label>
                 </form>
                 <div>
-                    <h1>{this.state.displayText}</h1>
+                    <h3>{this.state.displayText}</h3>
                 </div>
             </main>
         )
