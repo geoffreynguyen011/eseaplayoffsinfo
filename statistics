@@ -62,10 +62,10 @@
     s28 stats:
     advanced: 
     - 39 total
-    - top 16, cutoff 8-7 with 207 RW, 210 RL
+    - top 16, cutoff 8-8 with 207 RW, 210 RL
     main: 
     - 109 total
-    - top 32, cutoff 8-7 with 223 RW, 193 RL
+    - top 32, cutoff 8-8 with 223 RW, 193 RL
         top 64, cutoff 7-9 with 199 RW, 206 RL
     im:
     - 224 total
