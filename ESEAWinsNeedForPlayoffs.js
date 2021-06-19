@@ -107,15 +107,7 @@ class ESEAWinsNeedForPlayoffs extends React.Component {
         }
         else if (this.state.division === 'advanced') {
             if (this.state.numWins === '' || 
-            this.state.numWins === '0' ||
-            this.state.numWins === '1' ||
-            this.state.numWins === '2' ||
-            this.state.numWins === '3' ||
-            this.state.numWins === '4' ||
-            this.state.numWins === '5' ||
-            this.state.numWins === '6' ||
-            this.state.numWins === '7' ||
-            this.state.numWins === '8') {
+            parseInt(this.state.numWins) < 9) {
                 this.setState({ 
                     displayText: 'Did not make playoffs'
                 })
@@ -163,23 +155,23 @@ class ESEAWinsNeedForPlayoffs extends React.Component {
                     onChange={this.handleChange}
                 >
                     <option value=''>Select wins</option>
-                    <option value='0'>0</option>
-                    <option value='1'>1</option>
-                    <option value='2'>2</option>
-                    <option value='3'>3</option>
-                    <option value='4'>4</option>
-                    <option value='5'>5</option>
-                    <option value='6'>6</option>
-                    <option value='7'>7</option>
-                    <option value='8'>8</option>
-                    <option value='9'>9</option>
-                    <option value='10'>10</option>
-                    <option value='11'>11</option>
-                    <option value='12'>12</option>
-                    <option value='13'>13</option>
-                    <option value='14'>14</option>
-                    <option value='15'>15</option>
-                    <option value='16'>16</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
                 </select>
                 
                 <br />
