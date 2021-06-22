@@ -7,4 +7,4 @@ As of April: Project has been implemented using React instead of regular JavaScr
 
 As of May: Project has been imported to a different repository. Refer to that repository for future changes, found here: https://github.com/geoffreynguyen011/eseaplayoffsinfoprovider
 
-Last updated: May 8, 2020
+Last updated: June 20, 2021
